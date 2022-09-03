@@ -27,7 +27,10 @@
       $statement->bindParam(":user_id", $_SESSION["user"]["id"]);
       $statement->execute();
 
+      $_SESSION["flash"] = ["message" => "Contact {$_POST['name']} added."];
+
       header("Location: home.php");
+      return;
     }
   }
 ?>
